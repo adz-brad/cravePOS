@@ -1,12 +1,13 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "cravePOS - Crave Restaurant Management Suite",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "description": "cravePOS - Point-of-sale operations in Crave Restaurant Management Suite",
+  "version": "1.0.0",
+  "license": "EULA",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
+    "mobiledev": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -14,16 +15,32 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.9",
     "gatsby": "^3.11.1",
+    "gatsby-plugin-manifest": "^3.12.0",
+    "gatsby-plugin-offline": "^4.12.0",
+    "immutability-helper": "^3.1.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dnd": "^14.0.3",
+    "react-dnd-html5-backend": "^14.0.1",
+    "react-dnd-preview": "^6.0.2",
+    "react-dnd-touch-backend": "^14.1.0",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-live-clock": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.4"
   },
   "devDependencies": {
-    "prettier": "2.3.2"
+    "autoprefixer": "^10.3.2",
+    "gatsby-plugin-postcss": "^4.12.0",
+    "postcss": "^8.3.6",
+    "prettier": "2.3.2",
+    "tailwindcss": "^2.2.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/brad-nst/cravePOS"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

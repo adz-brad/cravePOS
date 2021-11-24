@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Antonio;
+    src: url("../assets/fonts/Antonio-VariableFont_wght.ttf");
+  }
+
+  @font-face {
+    font-family: OpenSans;
+    src: url("../assets/fonts/OpenSansCondensed-Light.ttf");
+  }
+}
+
+.font-headers {
+  font-family: Antonio;
+}
+
+.font-content {
+  font-family: OpenSans;
+}
+
+/*----- SCROLL BAR ----*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 rgb(0, 0, 0);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, var(--tw-bg-opacity));
+  border-left: 2px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  border-bottom-right-radius: 10px;
+}
+
+#order-list::-webkit-scrollbar-thumb,
+#seatData::-webkit-scrollbar-thumb {
+  border-bottom-right-radius: 0px;
+}
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 30, 50, var(--tw-bg-opacity));
+}
+
+/* ----- DISPLAY ----- */
+
+#navigation-topbar {
+  width: calc(100% - 15px);
+  border-bottom-right-radius: 15px;
+}
+
+#navigation-sidebar {
+  height: calc(100vh - 6rem);
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+main#display {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  height: calc(100vh - 6rem);
+  width: calc(100vw - 6rem);
+}
+
+@media only screen and (min-width: 1536px) {
+  main#display {
+    width: calc(100vw - 13rem);
+  }
+}
+
+div#login {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  height: calc(100% - 6rem);
+  width: calc(100% - 6rem);
+  background-color: white;
+  z-index: 999;
+}
+
+@media only screen and (min-width: 1536px) {
+  div#login {
+    width: calc(100% - 13rem);
+  }
+}
+
+div#layout {
+  height: calc(100% - 4rem);
+  overflow: hidden;
+}
+
+/* ----- TOASTS ----- */
+
+.Toastify__toast-container {
+  @apply fixed -bottom-1 p-0 w-auto !important;
+}
+
+.custom-toast {
+  @apply font-headers shadow-lg rounded-md text-white text-xl font-medium min-h-0 pl-4 pr-7 cursor-pointer !important;
+}
+
+.red-toast {
+  @apply bg-red-700 hover:bg-red-800 !important;
+}
+
+.green-toast {
+  @apply bg-green-700 hover:bg-green-800 !important;
+}
+
+.Toastify__close-button {
+  @apply absolute top-1 right-1 text-white opacity-100 !important;
+}
+
+/* ----- BUTTONS ----- */
+
+.button {
+  @apply p-2 rounded-r-lg hover:shadow-md text-white hover:text-black bg-gray-900 hover:bg-white;
+  width: calc(100% - 10px);
+}
+
+.toggle-button {
+  @apply font-headers text-3xl text-white m-2 py-3 px-4 bg-gray-400 rounded-md hover:bg-gray-700 filter drop-shadow-md;
+}
+
+.toggle-selected {
+  @apply bg-gray-700;
+}
+
+li.button {
+  @apply flex flex-row items-center py-4;
+}
+
+.menu-icon {
+  @apply ml-2 transform filter drop-shadow-md;
+}
+
+.menu-text {
+  @apply hidden xxl:block text-xl ml-2 filter drop-shadow-md;
+}
+
+li.button:hover .menu-icon {
+  @apply scale-105 ml-1 pr-1;
+}
+
+li.button:hover .menu-text {
+  @apply font-semibold;
+}
+
+.pinpad-button {
+  @apply flex flex-row items-center justify-center text-5xl bg-white hover:bg-gray-200 hover:shadow-xl hover:scale-105 font-semibold border-2 rounded-2xl shadow-md m-1 h-20 w-20;
+}
+
+.order-tab,
+.payment-tab {
+  @apply w-full bg-gray-600 rounded-lg text-white font-headers font-medium text-2xl py-2;
+}
+
+.order-tab-active,
+.payment-tab-active {
+  @apply bg-gray-900 shadow-lg;
+}
+
+.section-tab {
+  @apply w-full rounded-lg text-white font-headers font-medium text-2xl py-2;
+}
+
+.loading {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== TABLES ===== */
+
+.table-size {
+  width: 12vw;
+  height: 12vw;
+}
+
+@media only screen and (max-height: 499px) and (min-width: 600px) {
+  .table-size {
+    width: 13vw;
+    height: 13vw;
+  }
+}
+
+@media only screen and (min-height: 500px) and (min-width: 600px) {
+  .table-size {
+    width: 17vw;
+    height: 17vw;
+  }
+}
+
+@media only screen and (min-height: 500px) and (min-width: 700px) {
+  .table-size {
+    width: 16.8vw;
+    height: 16.8vw;
+  }
+}
+
+@media only screen and (min-height: 500px) and (min-width: 800px) {
+  .table-size {
+    width: 15.7vw;
+    height: 15.7vw;
+  }
+}
+
+@media only screen and (min-height: 500px) and (min-width: 900px) {
+  .table-size {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1000px) {
+  .table-size {
+    width: 13.5vw;
+    height: 13.5vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1100px) {
+  .table-size {
+    width: 12.45vw;
+    height: 12.45vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1200px) {
+  .table-size {
+    width: 11.35vw;
+    height: 11.35vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1300px) {
+  .table-size {
+    width: 10.5vw;
+    height: 10.5vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1400px) {
+  .table-size {
+    width: 9.75vw;
+    height: 9.75vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1500px) {
+  .table-size {
+    width: 9vw;
+    height: 9vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1535px) {
+  .table-size {
+    width: 8.75vw;
+    height: 8.75vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1600px) {
+  .table-size {
+    width: 8.5vw;
+    height: 8.5vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1700px) {
+  .table-size {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1800px) {
+  .table-size {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+}
